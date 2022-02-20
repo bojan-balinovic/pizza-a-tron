@@ -1,0 +1,47 @@
+.header {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.topping {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+    box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(242, 242, 242, 1);
+    border-radius: 56px;
+    padding-top: 2em;
+}
+
+.topping:hover {
+    cursor: pointer;
+}
+
+.topping__selected {
+    background-color: #E5C3F5;
+}
+
+.topping__selected .topping--icon {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.topping+.topping {
+    margin-left: 1em;
+}
+
+.topping--icon {
+    padding: 1em;
+    border-radius: 100%;
+}
+
+.topping--name {
+    margin-top: 1em;
+}
+
+.total-price {
+    text-align: center;
+    font-weight: bold;
+    margin: 2em 0;
+}

@@ -1,14 +1,36 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AuthService } from './services/auth.service';
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, FormsModule, MatFormFieldModule],
-  exports: [CommonModule, FormsModule, MatFormFieldModule,MatInputModule,MatIconModule],
+  declarations: [
+    NavbarComponent
+  ],
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    MatFormFieldModule, 
+    MatButtonModule, 
+    AngularFireModule.initializeApp(environment.firebase)],
+  exports: [
+    CommonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    NavbarComponent,
+    AngularFirestoreModule],
+  providers: [AuthService]
 })
-export class SharedModule {}
+export class SharedModule { }

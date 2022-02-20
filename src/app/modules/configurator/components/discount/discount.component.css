@@ -1,0 +1,28 @@
+.header {
+    margin-top: 4em;
+    text-align: center;
+}
+
+.discount {
+    background: #ECECF3;
+    border-radius: 56px;
+    padding: 1.5em 2em;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 2fr 1fr;
+}
+
+.discount__input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+}
+
+.discount__input:active,
+.discount__input:focus-visible {
+    border: none;
+    background: none;
+    outline: none;
+}

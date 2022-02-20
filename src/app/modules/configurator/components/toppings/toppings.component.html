@@ -1,0 +1,10 @@
+<h3 class="header">Toppings! Toppings!</h3>
+<div class="text-center">
+    <div class="topping" *ngFor="let topping of toppings" (click)="addTopping(topping)" [ngClass]="['topping',selectedToppings.includes(topping)?'topping__selected':'']">
+        <i class="topping--icon">{{topping.icon}}</i>
+        <div class="topping--name">{{topping.name}}</div>
+    </div>
+</div>
+<div class="total-price" *ngIf="totalPrice">
+    Total price: +{{totalPrice|currency:'USD'}}
+</div>

@@ -1,0 +1,13 @@
+.navbar--header {
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar--icon--container {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.navbar--logout--container {
+    text-align: center;
+}

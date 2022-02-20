@@ -1,15 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background-color: #fafafa;
-  font-family: "Montserrat", sans-serif;
-}
-.position-absolute-center {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+    background-color: #fafafa;
+    font-family: "Montserrat", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.position-absolute-center {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.position-absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    padding: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: none;
+    border-radius: 2em;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button--primary {
+    background: linear-gradient(to right, rgba(180, 144, 223, 1), rgba(198, 151, 233, 1));
+    color: white!important;
+}
+
+.button--gray {
+    background: #ECECF3!important;
+    border: 1px solid rgba(219, 219, 219, 1);
+    box-sizing: border-box;
+    border-radius: 36px;
+    color: black;
+}
+
+.large-button-icon {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.large-button-icon svg {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.input {
+    background: #ECECF3;
+    border: none;
+    border-radius: 56px;
+    padding: 1.5em 2em;
+    outline: none;
+}
+
+.input:active {
+    border-color: none;
+    outline: none;
+}
+
+.input:focus-visible {
+    border-color: none;
+    outline: none;
+}
