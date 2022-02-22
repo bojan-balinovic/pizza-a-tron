@@ -1,0 +1,10 @@
+.order-successful {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enjoy-meal-text {
+    margin-top: 1m;
+    margin-bottom: 2em;
+}

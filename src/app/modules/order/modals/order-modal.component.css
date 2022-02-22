@@ -1,0 +1,61 @@
+.order__header {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.order-details {
+    padding: 2em;
+}
+
+.order-details__toppings-text {
+    color: rgba(151, 151, 151, 1);
+}
+
+.order-details__toppings {
+    font-size: 1.25em;
+}
+
+.order-details__quantity {
+    margin-bottom: 2em;
+}
+
+.order-details__delivery-text {
+    color: rgba(151, 151, 151, 1);
+    padding: 2em 0;
+}
+
+.total-price {
+    padding: 2em;
+    display: flex;
+}
+
+.total-price__text {
+    align-self: center;
+}
+
+.total-price__value {
+    font-size: 2em;
+    align-self: center;
+    flex: 1;
+    text-align: right;
+}
+
+.payment-details-text {
+    margin: 2em 0;
+}
+
+.shipping-info>input {
+    margin: 1%;
+}
+
+.shipping-info__city {
+    width: 48%;
+}
+
+.shipping-info__postal {
+    width: 48%;
+}
+
+.shipping-info__finish-order {
+    width: 100%;
+}

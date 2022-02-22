@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ConfiguratorComponent } from './views/configurator/configurator.component';
-import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
-import { AuthModule } from '@angular/fire/auth';
 import { SharedModule } from '../shared/shared.module';
 import { ToppingsComponent } from './components/toppings/toppings.component';
 import { ToppingsService } from './services/toppings.service';
@@ -17,7 +15,6 @@ const routes = [
   {
     path: '',
     component: ConfiguratorComponent,
-    canActivate: [AngularFireAuthGuard]
   },
 
 ];

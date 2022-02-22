@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import Topping from '../../models/topping';
 import { ToppingsService } from '../../services/toppings.service';
@@ -11,7 +11,7 @@ import { ToppingsService } from '../../services/toppings.service';
 export class ToppingsComponent implements OnInit {
   toppings: Topping[];
   totalPrice:number;
-  public selectedToppings: Topping[]=new Array<Topping>();
+  @Input() public selectedToppings: Topping[]=new Array<Topping>();
   constructor(
     private toppingsService: ToppingsService
   ) {

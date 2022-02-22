@@ -2,8 +2,8 @@
 <div class="row justify-content-center">
     <div class="col-lg-6 col-md-6 col-12">
         <form (click)="getDiscount()">
-            <div class="discount">
-                <input class="discount__input" [(ngModel)]="discount.code" name="code" placeholder="Enter discount code">
+            <div class="input-with-button-container input-with-button-container--big">
+                <input class="input input--no-style" [(ngModel)]="discount.code" name="code" placeholder="Enter discount code">
                 <button class="button button--gray">Apply</button>
             </div>
         </form>

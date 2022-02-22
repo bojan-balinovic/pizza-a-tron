@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -8,8 +10,14 @@ const routes: Routes = [
   },
   {
     path:'configurator',
-    loadChildren: () => import('./modules/configurator/configurator.module').then(m => m.ConfiguratorModule)
+    loadChildren: () => import('./modules/configurator/configurator.module').then(m => m.ConfiguratorModule),
+    canActivate:[AngularFireAuthGuard]
   },
+  {
+    path:'order',
+    loadChildren:()=>import('./modules/order/order.module').then(m=>m.OrderModule),
+    canActivate:[AngularFireAuthGuard]
+  }
 
 ];
 

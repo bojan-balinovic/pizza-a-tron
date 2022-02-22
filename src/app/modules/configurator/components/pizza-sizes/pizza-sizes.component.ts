@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import PizzaSize from '../../models/pizza-size';
 import { PizzaSizesService } from '../../services/pizza-sizes.service';
 
@@ -9,7 +9,7 @@ import { PizzaSizesService } from '../../services/pizza-sizes.service';
 })
 export class PizzaSizesComponent implements OnInit {
   pizzaSizes: PizzaSize[];
-  selectedPizzaSize: PizzaSize;
+  @Input() public selectedPizzaSize: PizzaSize;
   constructor(private pizzaSizeService: PizzaSizesService) {
     this.pizzaSizeService.pizzaSizes.subscribe(pizzaSizes => {
       this.pizzaSizes = pizzaSizes;
@@ -21,6 +21,7 @@ export class PizzaSizesComponent implements OnInit {
   }
 
   selectPizzaSize(pizzaSize: PizzaSize) {
-    this.selectedPizzaSize = pizzaSize;
+    this.selectedPizzaSize.value=pizzaSize.value;
+    console.log(this.selectedPizzaSize)
   }
 }

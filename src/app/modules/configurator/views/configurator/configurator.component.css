@@ -8,15 +8,13 @@
     align-items: center;
     flex-direction: row;
     gap: 2em;
+    margin-top: 8em;
 }
 
 .footer__input {
-    width: 4em;
+    width: 6em;
     height: 2em;
-}
-
-.footer__pizza-image-container {
-    /* width: 6em; */
+    text-align: center;
 }
 
 .footer_quantity-text {
@@ -27,8 +25,12 @@
     color: rgba(180, 144, 223, 1);
 }
 
+.footer__pizza-image-container {
+    text-align: center;
+}
+
 .footer__image {
-    width: 100%;
+    width: 75%;
 }
 
 

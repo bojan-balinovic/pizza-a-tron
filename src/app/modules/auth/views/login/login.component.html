@@ -2,19 +2,22 @@
     <div class="col-lg-4">
         <form [formGroup]="loginForm" (submit)="login()">
 
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>E-mail</mat-label>
-                <input matInput placeholder="Email" formControlName="email" />
-            </mat-form-field>
+            <!-- <mat-form-field appearance="outline" class="w-100">
+                <mat-label>E-mail</mat-label> -->
+            <input class="input" placeholder="Email" formControlName="email" />
+            <!-- </mat-form-field> -->
             <br />
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" formControlName="password" />
-            </mat-form-field>
+            <br/>
+            <!-- <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label> -->
+            <input class="input" placeholder="Password" formControlName="password" />
+            <!-- </mat-form-field> -->
             <br />
+            <br/>
             <button matButton class="button button--primary w-100">Login</button>
         </form>
         <br/>
+
         <button matButton class="button button--primary w-100" (click)="loginWithGoogle()">
       <span class="large-button-icon float-left">
         <svg viewBox="0 0 366 372" xmlns="http://www.w3.org/2000/svg">

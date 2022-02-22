@@ -11,6 +11,10 @@ import { AuthService } from './services/auth.service';
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     NavbarComponent
@@ -20,7 +24,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     FormsModule, 
     MatFormFieldModule, 
     MatButtonModule, 
-    AngularFireModule.initializeApp(environment.firebase)],
+    AngularFireModule.initializeApp(environment.firebase),
+    MatDialogModule
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -28,9 +34,12 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
+    MatDividerModule,
     ReactiveFormsModule,
     NavbarComponent,
-    AngularFirestoreModule],
+    AngularFirestoreModule,
+    MatSnackBarModule
+  ],
   providers: [AuthService]
 })
 export class SharedModule { }

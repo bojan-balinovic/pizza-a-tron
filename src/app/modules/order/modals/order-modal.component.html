@@ -1,0 +1,42 @@
+<div class="order">
+    <h2 class="order__header">Almost done!</h2>
+    <div class="row">
+        <div class="col-6 order-details">
+            <h4>Order details</h4>
+            <div class="order-details__toppings-text">Toppings</div>
+            <div class="order-details__toppings">
+                <span *ngFor="let topping of order.toppings;let last=last">
+                    {{topping.name}} <ng-container *ngIf="!last">,</ng-container>
+                </span>
+            </div>
+            <div class="order-details__quantity">QTY: {{order.quantity}}</div>
+            <mat-divider></mat-divider>
+            <div class="order-details__delivery-text">
+                Delivery<br /> Free delivery within 1 hour or you don't have to pay
+            </div>
+            <mat-divider></mat-divider>
+            <div class="input-with-button-container">
+                <input class="input input--no-style" [(ngModel)]="discount.code" name="code" placeholder="Enter discount code">
+                <button class="button button--gray">Apply</button>
+            </div>
+            <div class="total-price">
+                <div class="total-price__text">Total price</div>
+                <h5 class="total-price__value">{{order.total|currency:'USD'}}</h5>
+            </div>
+        </div>
+        <div class="col-6 shipping-info">
+            <h4>Shipping details</h4>
+            <input class="input shipping-info__street" placeholder="Street name and number">
+            <input class="input shipping-info__city" placeholder="City" />
+            <input class="input shipping-info__postal" placeholder="Postal code" />
+            <input class="input shipping-info__country" placeholder="Country" />
+            <div class="payment-details-text">
+                <h4>Payment details</h4>
+                <div>Cash on delivery</div>
+            </div>
+            <mat-divider></mat-divider>
+            <br/>
+            <button class="button button--primary shipping-info__finish-order" (click)="finishOrder()">Finish order</button>
+        </div>
+    </div>
+</div>

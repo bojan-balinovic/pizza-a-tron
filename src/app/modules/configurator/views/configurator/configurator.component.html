@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
-<app-toppings></app-toppings>
-<app-pizza-sizes></app-pizza-sizes>
+<app-toppings [selectedToppings]="order.toppings"></app-toppings>
+<app-pizza-sizes [selectedPizzaSize]="order.size"></app-pizza-sizes>
 <app-discount></app-discount>
 <div class="row justify-content-center">
     <div class="col-xl-7 col-lg-9 col-sm-12 col-xs-12">
@@ -9,7 +9,7 @@
                 <img class="footer__image" src="/assets/images/pizza.svg">
             </div>
             <div>
-                <input class="input footer__input">
+                <input class="input footer__input" [(ngModel)]="order.quantity">
                 <div class="footer_quantity-text">QTY</div>
             </div>
             <div>
@@ -18,7 +18,7 @@
                 </h4>
                 <div>Order total</div>
             </div>
-            <button class="button button--primary">Buy Pizza! Pizza!</button>
+            <button class="button button--primary" (click)="buyPizza()">Buy Pizza! Pizza!</button>
         </div>
     </div>
 </div>

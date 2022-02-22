@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background-color: #fafafa;
+    background-color: #E5E5E5!important;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -70,8 +70,24 @@ body {
     background: #ECECF3;
     border: none;
     border-radius: 56px;
-    padding: 1.5em 2em;
+    padding: 1.2em 1.6em;
+    width: 100%;
     outline: none;
+}
+
+.input-with-button-container {
+    background: #ECECF3;
+    margin-top: 2em;
+    border-radius: 56px;
+    padding: 0.75em 1em;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 2fr 1fr;
+}
+
+.input-with-button-container--big {
+    padding: 1.5em 2em;
 }
 
 .input:active {
@@ -81,5 +97,19 @@ body {
 
 .input:focus-visible {
     border-color: none;
+    outline: none;
+}
+
+.input--no-style {
+    background-color: none;
+    padding: none;
+    border: none;
+    outline: none;
+}
+
+.input--no-style:active,
+.input--no-style:focus-visible {
+    border: none;
+    background: none;
     outline: none;
 }
