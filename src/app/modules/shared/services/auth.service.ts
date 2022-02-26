@@ -18,14 +18,8 @@ export class AuthService {
 
 /* Sign up */
   signUp(email: string, password: string) {
-    this.angularFireAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then(res => {
-        console.log('You are Successfully signed up!', res);
-      })
-      .catch(error => {
-        console.log('Something is wrong:', error.message);
-      });
+    return this.angularFireAuth
+      .createUserWithEmailAndPassword(email, password);
   }
   // signUpWithGoogle(){
   //   this.angularFireAuth.
@@ -40,14 +34,8 @@ export class AuthService {
   }
   /* Sign in */
   signIn(email: string, password: string) {
-    this.angularFireAuth
-      .signInWithEmailAndPassword(email, password)
-      .then(res => {
-        console.log('youre in');
-    })
-      .catch(err => {
-        console.log('Something went wrong:', err.message);
-      });
+    return this.angularFireAuth
+      .signInWithEmailAndPassword(email, password);
   }
 
   /* Sign out */

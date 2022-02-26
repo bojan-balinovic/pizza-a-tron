@@ -4,6 +4,7 @@ import { OrderModalComponent } from './modals/order-modal.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { OrderSuccessfulComponent } from './views/order-successful/order-successful.component';
+import { OrderService } from './services/order.service';
 
 
 const routes = [
@@ -23,6 +24,9 @@ const routes = [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes)
+  ],
+  providers:[
+    OrderService
   ]
 })
 export class OrderModule { }

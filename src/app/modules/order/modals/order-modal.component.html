@@ -24,19 +24,24 @@
                 <h5 class="total-price__value">{{order.total|currency:'USD'}}</h5>
             </div>
         </div>
-        <div class="col-6 shipping-info">
-            <h4>Shipping details</h4>
-            <input class="input shipping-info__street" placeholder="Street name and number">
-            <input class="input shipping-info__city" placeholder="City" />
-            <input class="input shipping-info__postal" placeholder="Postal code" />
-            <input class="input shipping-info__country" placeholder="Country" />
-            <div class="payment-details-text">
-                <h4>Payment details</h4>
-                <div>Cash on delivery</div>
-            </div>
-            <mat-divider></mat-divider>
-            <br/>
-            <button class="button button--primary shipping-info__finish-order" (click)="finishOrder()">Finish order</button>
+
+        <div class="col-6 ">
+            <form [formGroup]="shippingInformation" class="shipping-info">
+                <h4>Shipping details</h4>
+                <input class="input shipping-info__street" formControlName="streetName" placeholder="Street name and number">
+                <input class="input shipping-info__city" formControlName="city" placeholder="City" />
+                <input class="input shipping-info__postal" formControlName="postalCode" placeholder="Postal code" />
+                <input class="input shipping-info__country" formControlName="country" placeholder="Country" />
+                <div class="payment-details-text">
+                    <h4>Payment details</h4>
+                    <div>Cash on delivery</div>
+                </div>
+                <mat-divider></mat-divider>
+                <br />
+                <button class="button button--primary shipping-info__finish-order" (click)="finishOrder()">Finish
+                    order</button>
+            </form>
         </div>
+
     </div>
 </div>

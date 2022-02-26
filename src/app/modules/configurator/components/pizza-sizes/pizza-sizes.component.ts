@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import PizzaSize from '../../models/pizza-size';
 import { PizzaSizesService } from '../../services/pizza-sizes.service';
 
@@ -9,7 +9,9 @@ import { PizzaSizesService } from '../../services/pizza-sizes.service';
 })
 export class PizzaSizesComponent implements OnInit {
   pizzaSizes: PizzaSize[];
-  @Input() public selectedPizzaSize: PizzaSize;
+  public selectedPizzaSize:PizzaSize;
+
+  @Output() selectPizzaSize:EventEmitter<PizzaSize>=new EventEmitter<PizzaSize>()
   constructor(private pizzaSizeService: PizzaSizesService) {
     this.pizzaSizeService.pizzaSizes.subscribe(pizzaSizes => {
       this.pizzaSizes = pizzaSizes;
@@ -19,9 +21,9 @@ export class PizzaSizesComponent implements OnInit {
   async ngOnInit() {
 
   }
-
-  selectPizzaSize(pizzaSize: PizzaSize) {
-    this.selectedPizzaSize.value=pizzaSize.value;
-    console.log(this.selectedPizzaSize)
+  select(pizzaSize:PizzaSize){
+    this.selectedPizzaSize=pizzaSize;
+    this.selectPizzaSize.emit(pizzaSize);
   }
+
 }

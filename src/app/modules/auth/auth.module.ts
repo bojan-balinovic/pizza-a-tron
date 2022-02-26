@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './views/login/login.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+import { RegisterComponent } from './views/register/register.component';
 const redirectLoggedInToConfigurator = () => redirectLoggedInTo(['configurator']);
 
 const routes = [
@@ -21,11 +21,16 @@ const routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectLoggedInToConfigurator }
   },
-
+  {
+    path:'register',
+    component:RegisterComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToConfigurator }
+  }
 ];
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

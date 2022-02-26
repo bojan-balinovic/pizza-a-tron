@@ -4,7 +4,22 @@
     transform: translateY(-50%);
 }
 
+.pizza-on-way-text {}
+
 .enjoy-meal-text {
     margin-top: 1m;
     margin-bottom: 2em;
+}
+
+.buy-another-button {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .pizza-on-way-text {
+        text-align: center;
+    }
+    .enjoy-meal-text {
+        text-align: center;
+    }
 }

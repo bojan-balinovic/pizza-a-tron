@@ -8,6 +8,8 @@ import { ToppingsService } from './services/toppings.service';
 import { PizzaSizesComponent } from './components/pizza-sizes/pizza-sizes.component';
 import { PizzaSizesService } from './services/pizza-sizes.service';
 import { DiscountComponent } from './components/discount/discount.component';
+import { OrderService } from '../order/services/order.service';
+import { DiscountService } from './services/discount.service';
 
 
 const routes = [
@@ -34,7 +36,9 @@ const routes = [
   ],
   providers: [
     ToppingsService,
-    PizzaSizesService
+    PizzaSizesService,
+    OrderService,
+    DiscountService
   ]
 })
 export class ConfiguratorModule { }
