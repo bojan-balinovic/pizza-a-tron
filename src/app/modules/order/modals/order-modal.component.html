@@ -1,7 +1,7 @@
 <div class="order">
     <h2 class="order__header">Almost done!</h2>
     <div class="row">
-        <div class="col-6 order-details">
+        <div class="col-md-6 col-12 order-details">
             <h4>Order details</h4>
             <div class="order-details__toppings-text">Toppings</div>
             <div class="order-details__toppings">
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col-6 ">
+        <div class="col-md-12 col-12">
             <form [formGroup]="shippingInformation" class="shipping-info">
                 <h4>Shipping details</h4>
                 <input class="input shipping-info__street" formControlName="streetName" placeholder="Street name and number">

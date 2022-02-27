@@ -1,13 +1,13 @@
 <div class="row navbar">
-    <div class="col-4 navbar--header">Pizz-a-tron</div>
-    <div class="col-4 navbar-icon-container">
+    <div class="col-md-4 col-3 navbar--header">Pizz-a-tron</div>
+    <div class="col-md-4 col-3 navbar-icon-container">
         <a class="button button__gray" [routerLink]="'/configurator'" class="navbar-icon">🍕</a></div>
-    <div class="col-4 navbar--logout--container">
-        <a class="button button__gray" [routerLink]="'/order/history'">
+    <div class="col-md-4 col-6 navbar--logout--container">
+        <a class="button button__gray d-inline-block" [routerLink]="'/order/history'">
             Order history
         </a>
 
-        <button class="button button__gray" (click)="logout()">
+        <button class="button button__gray d-inline-block" (click)="logout()">
             Log out
         </button>
     </div>
