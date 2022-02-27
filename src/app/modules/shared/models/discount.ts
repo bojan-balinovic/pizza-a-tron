@@ -1,4 +1,4 @@
 export default class Discount{
     code:string;
-    value:number;
+    value:number=0;
 }

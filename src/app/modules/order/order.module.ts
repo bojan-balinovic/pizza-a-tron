@@ -5,12 +5,17 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { OrderSuccessfulComponent } from './views/order-successful/order-successful.component';
 import { OrderService } from './services/order.service';
+import { OrderHistoryComponent } from './views/order-history/order-history.component';
 
 
 const routes = [
   {
     path: 'order-successful',
     component:OrderSuccessfulComponent
+  },
+  {
+    path:'history',
+    component:OrderHistoryComponent
   }
 ];
 
@@ -18,7 +23,8 @@ const routes = [
 @NgModule({
   declarations: [
     OrderModalComponent,
-    OrderSuccessfulComponent
+    OrderSuccessfulComponent,
+    OrderHistoryComponent
   ],
   imports: [
     CommonModule,

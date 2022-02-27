@@ -1,10 +1,15 @@
 <h3 class="header">Pizza! Pizza! size</h3>
 <div class="row justify-content-center">
     <div class="col-6">
+
         <div class="pizza-sizes-container">
-            <div *ngFor="let pizzaSize of pizzaSizes" (click)="select(pizzaSize)" [ngClass]="['pizza-size', pizzaSize==selectedPizzaSize?'pizza-size--selected':'']">
-                {{pizzaSize.value}}
-            </div>
+            <ngx-spinner [fullScreen]="false" size="medium" *ngIf="loading" bdColor="rgba(0,0,0,0.1)">
+            </ngx-spinner>
+            <ng-container *ngIf="loading==false">
+                <div *ngFor="let pizzaSize of pizzaSizes" (click)="select(pizzaSize)" [ngClass]="['pizza-size', pizzaSize==selectedPizzaSize?'pizza-size--selected':'']">
+                    {{pizzaSize.value}}
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

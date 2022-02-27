@@ -1,7 +1,12 @@
 <div class="row navbar">
     <div class="col-4 navbar--header">Pizz-a-tron</div>
-    <div class="col-4 navbar--icon--container">🍕</div>
+    <div class="col-4 navbar-icon-container">
+        <a class="button button__gray" [routerLink]="'/configurator'" class="navbar-icon">🍕</a></div>
     <div class="col-4 navbar--logout--container">
+        <a class="button button__gray" [routerLink]="'/order/history'">
+            Order history
+        </a>
+
         <button class="button button__gray" (click)="logout()">
             Log out
         </button>

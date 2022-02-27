@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
 
 import { environment } from 'src/environments/environment';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorPageComponent,
     
   ],
   imports: [
@@ -19,9 +21,9 @@ import { environment } from 'src/environments/environment';
     SharedModule,
     AppRoutingModule,
     BrowserAnimationsModule
-
-  ],
+    
+],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

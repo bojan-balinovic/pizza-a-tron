@@ -3,9 +3,14 @@
     font-weight: bold;
 }
 
-.navbar--icon--container {
+.navbar-icon-container {
     text-align: center;
     font-size: 3rem;
+}
+
+.navbar-icon,
+.navbar-icon:visited {
+    text-decoration: none;
 }
 
 .navbar--logout--container {

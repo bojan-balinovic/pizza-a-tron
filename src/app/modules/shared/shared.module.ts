@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,10 +14,15 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+import { DiscountService } from './services/discount.service';
+import { DiscountComponent } from './components/discount/discount.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    DiscountComponent
   ],
   imports: [
     CommonModule, 
@@ -25,7 +30,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatFormFieldModule, 
     MatButtonModule, 
     AngularFireModule.initializeApp(environment.firebase),
-    MatDialogModule
+    AngularFirestoreModule,
+    MatDialogModule,
+    MatTableModule,
+    RouterModule,
+    NgxSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -35,11 +44,18 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatIconModule,
     MatDividerModule,
+    MatTableModule,
     ReactiveFormsModule,
     NavbarComponent,
     AngularFirestoreModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule,
+    DiscountComponent,
+    NgxSpinnerModule
   ],
-  providers: [AuthService]
+  providers: [AuthService,DiscountService],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA 
+  ]
 })
 export class SharedModule { }

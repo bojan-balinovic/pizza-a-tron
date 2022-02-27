@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="row justify-content-center">
+    <div class="col-lg-10 col-12 position-absolute-center">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="size">
+                <th mat-header-cell *matHeaderCellDef>Size</th>
+                <td mat-cell *matCellDef="let order"> {{order.size?.value}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="toppings">
+                <th mat-header-cell *matHeaderCellDef>Toppings</th>
+                <td mat-cell *matCellDef="let order"> <span *ngFor="let topping of order.toppings;let last=last">
+                        {{topping.name}} <ng-container *ngIf="!last">,</ng-container>
+                    </span> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="discount">
+                <th mat-header-cell *matHeaderCellDef> Discount </th>
+                <td mat-cell *matCellDef="let order"> {{(order.discount?order.discount.value:0)|currency:'USD'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="country">
+                <th mat-header-cell *matHeaderCellDef>Country</th>
+                <td mat-cell *matCellDef="let order"> {{order.shippingInformation.country}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef>City</th>
+                <td mat-cell *matCellDef="let order"> {{order.shippingInformation.city}} </td>
+            </ng-container>
+            <ng-container matColumnDef="postalCode">
+                <th mat-header-cell *matHeaderCellDef>Postal code</th>
+                <td mat-cell *matCellDef="let order"> {{order.shippingInformation.postalCode}} </td>
+            </ng-container>
+            <ng-container matColumnDef="streetName">
+                <th mat-header-cell *matHeaderCellDef>Street name</th>
+                <td mat-cell *matCellDef="let order"> {{order.shippingInformation.streetName}}</td>
+            </ng-container>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell-no-data" colspan="9999">
+                    No orders yet
+                </td>
+            </tr>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

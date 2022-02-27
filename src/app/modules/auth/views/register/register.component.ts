@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/shared/services/auth.service';
@@ -14,20 +14,21 @@ export class RegisterComponent implements OnInit {
     email: ['', Validators.required],
     password: ['', Validators.required]
   });
+
   get email() {
     return this.registerForm.get('email') as FormControl;
   }
+
   get password() {
     return this.registerForm.get('password') as FormControl;
   }
+
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
   }

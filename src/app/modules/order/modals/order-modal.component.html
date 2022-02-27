@@ -15,10 +15,7 @@
                 Delivery<br /> Free delivery within 1 hour or you don't have to pay
             </div>
             <mat-divider></mat-divider>
-            <div class="input-with-button-container">
-                <input class="input input--no-style" [(ngModel)]="discount.code" name="code" placeholder="Enter discount code">
-                <button class="button button--gray">Apply</button>
-            </div>
+            <app-discount (addDiscount)="addDiscount($event)"></app-discount>
             <div class="total-price">
                 <div class="total-price__text">Total price</div>
                 <h5 class="total-price__value">{{order.total|currency:'USD'}}</h5>

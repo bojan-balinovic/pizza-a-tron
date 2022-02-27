@@ -7,10 +7,7 @@ import { ToppingsComponent } from './components/toppings/toppings.component';
 import { ToppingsService } from './services/toppings.service';
 import { PizzaSizesComponent } from './components/pizza-sizes/pizza-sizes.component';
 import { PizzaSizesService } from './services/pizza-sizes.service';
-import { DiscountComponent } from './components/discount/discount.component';
 import { OrderService } from '../order/services/order.service';
-import { DiscountService } from './services/discount.service';
-
 
 const routes = [
 
@@ -26,8 +23,7 @@ const routes = [
   declarations: [
     ConfiguratorComponent,
     ToppingsComponent,
-    PizzaSizesComponent,
-    DiscountComponent
+    PizzaSizesComponent
   ],
   imports: [
     CommonModule,
@@ -37,8 +33,7 @@ const routes = [
   providers: [
     ToppingsService,
     PizzaSizesService,
-    OrderService,
-    DiscountService
+    OrderService
   ]
 })
 export class ConfiguratorModule { }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import PizzaSize from '../../models/pizza-size';
 import { PizzaSizesService } from '../../services/pizza-sizes.service';
 
@@ -10,17 +11,23 @@ import { PizzaSizesService } from '../../services/pizza-sizes.service';
 export class PizzaSizesComponent implements OnInit {
   pizzaSizes: PizzaSize[];
   public selectedPizzaSize:PizzaSize;
-
   @Output() selectPizzaSize:EventEmitter<PizzaSize>=new EventEmitter<PizzaSize>()
-  constructor(private pizzaSizeService: PizzaSizesService) {
+  loading:boolean=true;
+
+  constructor(
+    private pizzaSizeService: PizzaSizesService,
+    private spinner:NgxSpinnerService
+    ) {
+  }
+
+  ngOnInit() {
+    this.spinner.show();
     this.pizzaSizeService.pizzaSizes.subscribe(pizzaSizes => {
       this.pizzaSizes = pizzaSizes;
+      this.loading=false;
     });
   }
 
-  async ngOnInit() {
-
-  }
   select(pizzaSize:PizzaSize){
     this.selectedPizzaSize=pizzaSize;
     this.selectPizzaSize.emit(pizzaSize);

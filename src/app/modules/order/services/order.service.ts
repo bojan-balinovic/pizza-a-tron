@@ -1,19 +1,31 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { getAuth } from 'firebase/auth';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../shared/services/auth.service';
 import Order from '../models/order';
 
 @Injectable()
 export class OrderService {
-  public orders: Observable<Order[]>;
-  private _orders:any;
+  private _orders: AngularFirestoreCollection<Order>;
+
   constructor(
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private authService: AuthService,
   ) {
-    this._orders=firestore.collection<Order>('orders');
-    this.orders= this._orders.valueChanges();
+    this._orders = firestore.collection<Order>('orders', o => {
+      return o.where('userId', '==', this.authService.userData.currentUser?.uid);
+    });
   }
-  public add(order:Order){
-      this._orders.add({...order});
+
+  get(): Observable<Order[]> {
+    return this._orders.valueChanges();
+  }
+
+  add(order: Order) {
+    order.userId = this.authService.userData.currentUser?this.authService.userData.currentUser.uid:'';
+    let data={...order} as any;
+    data.total=order.total;
+    this._orders.add(data);
   }
 }

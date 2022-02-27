@@ -1,10 +1,18 @@
-<h3 class="header">Toppings! Toppings!</h3>
-<div class="text-center">
-    <div class="topping" *ngFor="let topping of toppings" (click)="addTopping(topping)" [ngClass]="['topping',selectedToppings.includes(topping)?'topping__selected':'']">
-        <i class="topping--icon">{{topping.icon}}</i>
-        <div class="topping--name">{{topping.name}}</div>
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-8 col-12">
+        <h3 class="header">Toppings! Toppings!</h3>
+        <div class="text-center position-relative toppings-container">
+            <ngx-spinner [fullScreen]="false" size="medium" *ngIf="loading" bdColor="rgba(0,0,0,0.1)">
+            </ngx-spinner>
+            <ng-container *ngIf="loading==false">
+                <div class="topping" *ngFor="let topping of toppings" (click)="addTopping(topping)" [ngClass]="['topping',selectedToppings.includes(topping)?'topping__selected':'']">
+                    <i class="topping__icon">{{topping.icon}}</i>
+                    <div class="topping__name">{{topping.name}}</div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="total-price" *ngIf="totalPrice">
+            Total price: +{{totalPrice|currency:'USD'}}
+        </div>
     </div>
-</div>
-<div class="total-price" *ngIf="totalPrice">
-    Total price: +{{totalPrice|currency:'USD'}}
 </div>

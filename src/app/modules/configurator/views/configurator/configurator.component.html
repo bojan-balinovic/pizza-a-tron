@@ -1,7 +1,12 @@
 <app-navbar></app-navbar>
 <app-toppings [selectedToppings]="order.toppings"></app-toppings>
 <app-pizza-sizes (selectPizzaSize)="selectPizzaSize($event)"></app-pizza-sizes>
-<app-discount (addDiscount)="addDiscount($event)"></app-discount>
+
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <app-discount (addDiscount)="addDiscount($event)"></app-discount>
+    </div>
+</div>
 <div class="row justify-content-center">
     <div class="col-xl-7 col-lg-9 col-sm-12 col-xs-12">
         <div class="footer">

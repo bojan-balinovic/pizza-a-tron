@@ -7,11 +7,18 @@ import Discount from '../models/discount';
 @Injectable()
 export class DiscountService {
     discounts: Observable<Discount[]>;
-    private _discounts:AngularFirestoreCollection<Discount>;
+    private _discounts: AngularFirestoreCollection<Discount>;
+    
     constructor(
         private firestore: AngularFirestore
     ) {
         this._discounts = firestore.collection<Discount>('discounts')
         this.discounts = this._discounts.valueChanges();
+    }
+
+    get(code: string): Observable<Discount[]> {
+        return this.firestore.collection<Discount>('discounts', o => {
+            return o.where('code', '==', code);
+        }).valueChanges();
     }
 }
